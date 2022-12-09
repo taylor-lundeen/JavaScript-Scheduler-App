@@ -1,0 +1,41 @@
+<head>
+  <title>Schedule an Event</title> 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+         rel="stylesheet"
+         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+         crossorigin="anonymous"/>
+</head>
+<body>
+  <div class="d-flex pt-5 justify-content-center">
+    <h1>Schedule an Event</h1>
+  </div>
+  <div>
+    <form #userInput="ngForm" ng-submit="addEvent()">
+      <div class="d-flex pt-5 w-50 gap-2 mx-auto">
+        <label>What is the event</label>
+        <input class="form-control form-control-sm" type="text" name="description" ng-model="newevent.description" maxlength="25" required>
+      </div>
+      <div class="d-flex pt-4 w-50 gap-2 mx-auto">
+        <label>Is there anyone you are meeting with?</label>
+        <input class="form-control form-control-sm" type="text" name="person" ng-model="newevent.person" maxlength="25">
+      </div>
+      <div class="d-flex pt-4 w-50 gap-2 mx-auto">
+        <label>What day is the event?</label>
+        <input class="form-control form-control-sm" type="date" name="day" ng-model="newevent.day" required>
+      </div>
+      <div class="d-flex pt-4 w-50 gap-2 mx-auto">
+        <label>What time is the event?</label>
+        <input class="form-control form-control-sm" type="time" name="time" ng-model="newevent.time" required>
+      </div>
+      <div class="d-flex pt-4 justify-content-center">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+    <div class="pt-5 justify-content-center" style="margin-left: 5%; margin-right: 5%;">
+    <div class="card border-dark rounded-0">
+      <app-calendar></app-calendar>
+    </div>
+  </div>
+</div>
+</body>
+
